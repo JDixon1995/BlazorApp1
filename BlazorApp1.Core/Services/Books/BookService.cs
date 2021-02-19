@@ -1,8 +1,6 @@
 using System;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace BlazorApp1.Data
+namespace BlazorApp1.Core.Services.Books
 {
     public interface IBookService
     {

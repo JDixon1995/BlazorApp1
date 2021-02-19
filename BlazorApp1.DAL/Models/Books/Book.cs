@@ -1,6 +1,6 @@
 using System;
 
-namespace BlazorApp1.Data
+namespace BlazorApp1.DAL.Models.Books
 {
     public class Book
     {
