@@ -1,0 +1,36 @@
+﻿@page "/book/{Id:int}"
+
+@using BlazorApp1.Data
+
+@if (book != null)
+{
+    <h1>@book.Title</h1>
+
+    <p>@book.Overview</p>
+    <p>@book.Price</p>
+}
+
+
+
+@code {
+    [Inject]
+    public IBookService BookService { get; set; }
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    [Parameter]
+    public int Id { get; set; }
+
+    private Book book;
+
+    protected override void OnInitialized()
+    {
+        book = BookService.GetBooks()[Id];
+
+        if (book == null)
+        {
+            NavigationManager.NavigateTo("/");
+            return;
+        }
+    }
+}

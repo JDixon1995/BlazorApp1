@@ -28,6 +28,7 @@ namespace BlazorApp1
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddScoped<IBookService, BookService>();
             services.AddSingleton<WeatherForecastService>();
         }
 
